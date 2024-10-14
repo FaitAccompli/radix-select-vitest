@@ -1,6 +1,7 @@
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import * as Select from '@radix-ui/react-select';
+import '@testing-library/jest-dom';
 
 class MockPointerEvent extends Event {
   button: number;
@@ -38,7 +39,7 @@ it('should pass', async () => {
           </Select.Viewport>
         </Select.Content>
       </Select.Portal>
-    </Select.Root>
+    </Select.Root>,
   );
 
   const trigger = screen.getByRole('combobox', {
